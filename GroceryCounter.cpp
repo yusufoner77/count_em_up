@@ -19,6 +19,7 @@ int GroceryCounter::number_of_overflow() {
 
 }
 
+// Increments the tens place and the overflow count if needed
 int GroceryCounter::tens() {
 
     if (tens_place == 9) {
@@ -34,6 +35,7 @@ int GroceryCounter::tens() {
 
 }
 
+// Increments the ones place
 int GroceryCounter::ones() {
 
     if (ones_place == 9) {
@@ -49,6 +51,7 @@ int GroceryCounter::ones() {
 
 }
 
+// Increments the tenths place
 int GroceryCounter::tenths() {
 
     if (tenths_place == 9) {
@@ -64,6 +67,7 @@ int GroceryCounter::tenths() {
 
 }
 
+// Increments the hundredths place
 int GroceryCounter::hundredths() {
 
     if (hundredths_place == 9) {
@@ -79,6 +83,7 @@ int GroceryCounter::hundredths() {
 
 }
 
+// Clears the counter
 void GroceryCounter::clear() {
 
     tens_place = 0;
@@ -89,6 +94,7 @@ void GroceryCounter::clear() {
 
 }
 
+// Prints out the counter as a dollar total
 void GroceryCounter::total() {
 
     if (tens_place == 0) {
