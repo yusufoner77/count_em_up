@@ -7,11 +7,6 @@ class GroceryCounter {
     int tenths_place;
     int hundredths_place;
     int overflow_count;
-    int get_tens_place();
-    int get_ones_place();
-    int get_tenths_place();
-    int get_hundredths_place();
-    int get_overflow_count();
 
     public:
    

@@ -5,6 +5,7 @@ using namespace std;
 
 
 int main() {
+
 GroceryCounter grocery_counter;
 
 // This will show that we start at $0.00
@@ -28,12 +29,8 @@ for (int i = 0; i < 9; i++) {
 }
 grocery_counter.total();
 
-// This will show that all overflows work properly, should output $100.00
+// This will show that all overflows work properly, should output $0.00
 grocery_counter.hundredths();
-grocery_counter.total();
-
-// Showing that clear works properly
-grocery_counter.clear();
 grocery_counter.total();
 
 // This will set our starting total to $12.34
@@ -61,6 +58,10 @@ grocery_counter.ones();
 grocery_counter.ones();
 grocery_counter.tenths();
 grocery_counter.hundredths();
+grocery_counter.total();
+
+// Showing that clear works properly
+grocery_counter.clear();
 grocery_counter.total();
 
 }

@@ -13,36 +13,6 @@ GroceryCounter::GroceryCounter() {
     
 }
 
-int GroceryCounter::get_tens_place() {
-
-    return tens_place;
-
-}
-
-int GroceryCounter::get_ones_place() {
-
-    return ones_place;
-
-}
-
-int GroceryCounter::get_tenths_place() {
-
-    return tenths_place;
-
-}
-
-int GroceryCounter::get_hundredths_place() {
-
-    return hundredths_place;
-
-}
-
-int GroceryCounter::get_overflow_count() {
-
-    return overflow_count;
-
-}
-
 int GroceryCounter::number_of_overflow() {
 
     return overflow_count;
@@ -50,9 +20,6 @@ int GroceryCounter::number_of_overflow() {
 }
 
 int GroceryCounter::tens() {
-
-    get_tens_place();
-    get_overflow_count();
 
     if (tens_place == 9) {
         overflow_count++;
@@ -69,9 +36,6 @@ int GroceryCounter::tens() {
 
 int GroceryCounter::ones() {
 
-    get_ones_place();
-    get_tens_place();
-
     if (ones_place == 9) {
         tens();
         ones_place = 0;
@@ -86,9 +50,6 @@ int GroceryCounter::ones() {
 }
 
 int GroceryCounter::tenths() {
-
-    get_tenths_place();
-    get_ones_place();
 
     if (tenths_place == 9) {
         ones();
@@ -105,9 +66,6 @@ int GroceryCounter::tenths() {
 
 int GroceryCounter::hundredths() {
 
-    get_hundredths_place();
-    get_tenths_place();
-
     if (hundredths_place == 9) {
         tenths();
         hundredths_place = 0;
@@ -123,12 +81,6 @@ int GroceryCounter::hundredths() {
 
 void GroceryCounter::clear() {
 
-    get_tens_place();
-    get_ones_place();
-    get_tenths_place();
-    get_hundredths_place();
-    get_overflow_count();
-
     tens_place = 0;
     ones_place = 0;
     tenths_place = 0;
@@ -138,23 +90,13 @@ void GroceryCounter::clear() {
 }
 
 void GroceryCounter::total() {
-    
-    get_tens_place();
-    get_ones_place();
-    get_tenths_place();
-    get_hundredths_place();
-    get_overflow_count();
 
-    if (overflow_count == 0 && tens_place != 0) {
-        cout << "$" << tens_place << ones_place << "." << tenths_place << hundredths_place << endl;
-    }
-
-    else if (overflow_count == 0 && tens_place == 0) {
+    if (tens_place == 0) {
         cout << "$" << ones_place << "." << tenths_place << hundredths_place << endl;
     }
 
     else {
-        cout << "$" << overflow_count << tens_place << ones_place << "." << tenths_place << hundredths_place << endl;
+        cout << "$" << tens_place << ones_place << "." << tenths_place << hundredths_place << endl;
     }
 
 }
